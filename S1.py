@@ -4,6 +4,10 @@ pygame.init()
 
 screen_width = 900
 screen_height = 600
+orange = (255, 165, 0)
+black = (0, 0, 0)
+purple = (149, 53, 83)
+white = (255, 255, 255)
 
 #Creating Window
 gamewindow = pygame.display.set_mode((screen_width,screen_height))   # (screen_width,screen_height)
@@ -19,6 +23,26 @@ def text_screen(text,color,x,y) :
 def plot_snake(gamewindow,black,snake_list,snake_size):
     for x,y in snake_list :
         pygame.draw.rect(gamewindow, black, [x, y, snake_size, snake_size])
+
+def homescreen():
+
+    exit_game = False
+    snake_emoji = pygame.image.load("snakeemoji.png")  # I will add snake emoji
+    snake_emoji = pygame.transform.scale(snake_emoji, (60, 60))
+    while not exit_game :
+        gamewindow.fill(orange)
+        text_screen("Welcome to Serpent Sprinter", black, 190, 250)
+        text_screen("Press \"spacebar\" to play", purple, 230, 295)
+        text_screen("Designed by Rajat", white, 552, 560)
+        gamewindow.blit(snake_emoji, (430, 190))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT :
+                exit_game = True
+            if event.type == pygame.KEYDOWN :
+                if event.key == pygame.K_SPACE :
+                    gameloop()
+        pygame.display.update()
+        clock.tick(60)
 
 
 
@@ -45,14 +69,18 @@ def gameloop() :
     fps = 60
     snake_list = []
     snake_length = 1
+    with open("highscore.txt","r") as f :
+        highscore = f.read()
     while not exit_game:
         if game_over :
+            with open("highscore.txt","w") as f :
+                f.write(str(highscore))             # Saving the high score
             gamewindow.fill(white)
             text_screen("Well played! Game Over: Press \"enter\" to restart",red,10,250)
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        gameloop()
+                        homescreen()
                 if event.type == pygame.QUIT:
                     exit_game = True
 
@@ -79,10 +107,12 @@ def gameloop() :
             snake_y = snake_y + velocity_y
 
             if abs(snake_x - food_x)< 10 and abs(snake_y - food_y)< 10 :
-                score += 1
+                score += 10
                 food_x = random.randint(10, 900 / 1.2)
                 food_y = random.randint(10, 600 / 1.2)
                 snake_length += 5
+                if score > int(highscore) :
+                    highscore = score
 
             head = []
             head.append(snake_x)
@@ -93,7 +123,7 @@ def gameloop() :
 
 
             gamewindow.fill(green)
-            text_screen("Score =  " + str(score * 10), red, 5, 5)
+            text_screen("Score =  " + str(score) + " High Score= " + str(highscore), red, 5, 5)
             pygame.draw.rect(gamewindow, red, [food_x, food_y, snake_size, snake_size])
             plot_snake(gamewindow, black, snake_list, snake_size)
 
@@ -117,7 +147,7 @@ def gameloop() :
     pygame.quit()
     quit()
 
-gameloop()
+homescreen()
 
 
 
