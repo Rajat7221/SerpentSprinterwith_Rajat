@@ -15,19 +15,19 @@ Make sure you have Python and Pygame installed on your machine.
   pip install pygame
 
 ## Installation
-1. Clone the repository:
+* Clone the repository:
 
-bash:
+```bash
 git clone https://github.com/YourUsername/SerpentSprinterwith_Rajat.git
 
-2. Navigate to the project directory:
+* Navigate to the project directory:
 
-bash:
+```bash
 cd SerpentSprinterwith_Rajat
 
-3. Run the game:
+* Run the game:
 
-bash:
+```bash
 python main.py
 
 ## How To Play
