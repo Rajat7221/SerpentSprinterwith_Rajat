@@ -4,10 +4,6 @@ pygame.init()
 
 screen_width = 900
 screen_height = 600
-orange = (255, 165, 0)
-black = (0, 0, 0)
-purple = (149, 53, 83)
-white = (255, 255, 255)
 
 #Creating Window
 gamewindow = pygame.display.set_mode((screen_width,screen_height))   # (screen_width,screen_height)
@@ -23,26 +19,6 @@ def text_screen(text,color,x,y) :
 def plot_snake(gamewindow,black,snake_list,snake_size):
     for x,y in snake_list :
         pygame.draw.rect(gamewindow, black, [x, y, snake_size, snake_size])
-
-def homescreen():
-
-    exit_game = False
-    snake_emoji = pygame.image.load("snakeemoji.png")  # I will add snake emoji
-    snake_emoji = pygame.transform.scale(snake_emoji, (60, 60))
-    while not exit_game :
-        gamewindow.fill(orange)
-        text_screen("Welcome to Serpent Sprinter", black, 190, 250)
-        text_screen("Press \"spacebar\" to play", purple, 230, 295)
-        text_screen("Designed by Rajat", white, 552, 560)
-        gamewindow.blit(snake_emoji, (430, 190))
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT :
-                exit_game = True
-            if event.type == pygame.KEYDOWN :
-                if event.key == pygame.K_SPACE :
-                    gameloop()
-        pygame.display.update()
-        clock.tick(60)
 
 
 
@@ -80,7 +56,7 @@ def gameloop() :
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        homescreen()
+                        gameloop()
                 if event.type == pygame.QUIT:
                     exit_game = True
 
@@ -147,7 +123,7 @@ def gameloop() :
     pygame.quit()
     quit()
 
-homescreen()
+gameloop()
 
 
 
