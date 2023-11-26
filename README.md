@@ -15,20 +15,19 @@ Make sure you have Python and Pygame installed on your machine.
   pip install pygame
 
 ## Installation
-Clone the repository:
+1. Clone the repository:
 
-bash
-Copy code
+bash:
 git clone https://github.com/YourUsername/SerpentSprinterWithRJ.git
-Navigate to the project directory:
 
-bash
-Copy code
+2. Navigate to the project directory:
+
+bash:
 cd SerpentSprinterWithRJ
-Run the game:
 
-bash
-Copy code
+3. Run the game:
+
+bash:
 python main.py
 
 ## How To Play
@@ -53,6 +52,6 @@ Background music (back21.mp3) (source : https://muzpan.net/mp3/go-by-ocean-ryan-
 Snake emoji (Source : https://static-00.iconduck.com/assets.00/snake-emoji-2048x1914-sh2iug2j.png)
 
 Author
-Rajat, GitHub Profile
+Rajat, Github Profile :  https://github.com/Rajat7221
 
 Feel free to provide feedback!
