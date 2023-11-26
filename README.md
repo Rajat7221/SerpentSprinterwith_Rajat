@@ -15,7 +15,7 @@ Make sure you have Python and Pygame installed on your machine.
   pip install pygame
 
 ## Installation
-1.Clone the repository:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/Rajat7221/SerpentSprinterwith_Rajat.git
@@ -30,22 +30,20 @@ cd SerpentSprinterwith_Rajat
 ```bash
 python main.py
 
-## HowtoPlay
 
-Use the arrow keys to control the snake's direction.
-Press the spacebar to start the game.
-Eat the food to grow the snake and increase your score.
-Avoid collisions with the game boundaries and the snake itself.
-Press Enter to restart the game when it's over.
+## How To Play
+
+1. Use the arrow keys to control the snake's direction.
+2. Press the spacebar to start the game.
+3. Eat the food to grow the snake and increase your score.
+4. Avoid collisions with the game boundaries and the snake itself.
+5. Press Enter to restart the game when it's over.
 
 ## Features
-
 Snake emoji displayed on the welcome screen.
 Background music (back21.mp3) playing throughout the game.
 Eating sound (eating.mp3) played when the snake consumes food.
 Game over sound (explosion.mp3) played on collisions.
-Screenshots
-Include some screenshots or gifs of your game in action.
 
 ## Acknowledgments
 
