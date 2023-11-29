@@ -187,17 +187,3 @@ homescreen()
 #gamewindow.blit(screen_text, [x, y]): This line blits (draws) the rendered text onto the game window at the specified coordinates [x, y].
 
 
-#Notes:
-# 1)The window in computer graphics and game development typically uses a coordinate system where the origin (0,0) is at the top-left corner of the screen or window. This system is similar to the Cartesian coordinate system but with the y-axis flipped. Here's a breakdown:
-#
-# Origin (0,0): Top-left corner.
-# X-Axis: Positive to the right.
-# Y-Axis: Positive downwards.
-
-#2)font = pygame.font.SysFont(None, 55): This line creates a font object using pygame.font.SysFont. The first argument is the font type, and None means using the default font. The second argument (55) is the font size.
-
-#def text_screen(text, color, x, y):: This line defines a function named text_screen that takes four parameters: text (the text you want to display), color (the color of the text), x (the x-coordinate where you want to place the text), and y (the y-coordinate where you want to place the text).
-
-#screen_text = font.render(text, True): This line renders the text using the previously defined font. It creates a new surface with the rendered text. The first argument is the text you want to render, and the second argument (True) indicates whether to use antialiasing (smoothing of the text edges).
-
-#gamewindow.blit(screen_text, [x, y]): This line blits (draws) the rendered text onto the game window at the specified coordinates [x, y].]): This line blits (draws) the rendered text onto the game window at the specified coordinates [x, y].
